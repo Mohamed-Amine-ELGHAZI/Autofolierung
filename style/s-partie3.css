@@ -1,0 +1,345 @@
+.big-leistungen-section {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.big-leistungen-title {
+    font-size: 3.5vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--text-white);
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.big-leistungen-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #e0e0e0;
+    letter-spacing: 4px;
+}
+
+@media (max-width: 768px) {
+    .big-leistungen-title {
+        font-size: 2.5rem;
+    }
+
+    .big-leistungen-subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 992px) {
+    .split-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .vertical-watermark {
+        display: none;
+    }
+
+    .giant-text {
+        font-size: 11vw;
+    }
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19%, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.service-card {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    border: 1px solid #222;
+}
+
+.service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px; 
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: auto; 
+    min-height: 40%; 
+    pointer-events: none;
+}
+
+.card-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.card-btn {
+    background-color: #ff8400;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    pointer-events: auto;
+}
+
+.service-card:hover .card-btn {
+    background-color: #ff9933;
+}
+
+.service-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+.service-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    background: #151515;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    transform: translateY(50px) scale(0.95);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.17, 0.67, 0.35, 1);
+}
+
+.service-modal.active .modal-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal-details {
+    color: #fff;
+}
+
+.modal-details h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.modal-details p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #a0a0a0;
+    margin-bottom: 30px;
+}
+
+.btn-contact-modal {
+    background: #e63946;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn-contact:hover {
+    background: #ff4a5a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(230, 57, 70, 0.4);
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    background: #e63946; 
+    color: #fff; 
+    transform: rotate(90deg); 
+}
+
+.card-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+}
+
+@media (max-width: 992px) {
+    .big-leistungen-section {
+        margin-bottom: 30px !important; 
+        padding: 0 15px !important;
+    }
+
+    .big-leistungen-title {
+        font-size: 30px !important; 
+        line-height: 1.2 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .big-leistungen-subtitle {
+        font-size: 11px !important; 
+        letter-spacing: 3px !important;
+        line-height: 1.6 !important;
+        max-width: 250px !important; 
+        margin: 0 auto !important; 
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr !important; 
+        padding: 0 15px !important; 
+        gap: 15px !important; 
+    }
+
+    .service-card {
+        height: 280px !important;
+    }
+
+    .card-overlay {
+        padding: 20px 15px !important; 
+    }
+
+    .card-title {
+        font-size: 18px !important;
+    }
+
+    .card-btn {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .card-btn svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    .modal-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .modal-content {
+        width: 95% !important;
+        padding: 30px 20px 20px !important;
+        border-radius: 15px !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+    }
+
+    .modal-image {
+        width: 100% !important;
+    }
+
+    .modal-image img {
+        width: 100% !important;
+        height: 220px !important;
+        border-radius: 10px !important;
+    }
+
+    .modal-details {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .modal-details h2 {
+        font-size: 24px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .modal-details p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .btn-contact-modal {
+        width: 100% !important;
+        padding: 15px !important;
+        font-size: 15px !important;
+    }
+
+    .close {
+        top: 10px !important;
+        right: 15px !important;
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 20px !important;
+        z-index: 10 !important;
+    }
+}

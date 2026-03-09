@@ -1,0 +1,30 @@
+
+/* GLOBAL & VARIABLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --orange: #FF8A00;
+    --bg-dark: #050505;
+    --text-white: #FFFFFF;
+    --border-color: rgba(255, 255, 255, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Clash Display', sans-serif;
+    overflow-x: hidden;
+}
+
+.mobile-wrapper {
+    width: 100%;
+}
+
+.text-orange { color: var(--orange); }

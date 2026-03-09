@@ -1,0 +1,239 @@
+/* 3. SECTION: VORTEILE (PAGE 2) */
+
+.benefits-section {
+  position: relative;
+  max-width: 1300px;
+  margin: 10px auto;
+  padding: 0 30px;
+}
+
+.vertical-watermark {
+  position: absolute;
+  right: 1000px;
+  top: 47%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(64, 64, 64, 1);
+  letter-spacing: 2px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.text-box {
+  flex: 1;
+}
+
+.text-box h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.text-box p {
+  color: rgba(255, 255, 255, 1);
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+}
+
+.btn-transparent {
+  display: inline-block;
+  background: transparent;
+  color: #aaa;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding: 15px 40px;
+  border: 1px solid var(--orange);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-transparent:hover {
+  background: var(--orange);
+  color: var(--text-white);
+}
+
+.bottom-text-left {
+  /* margin-top: 40px; */
+}
+
+.bottom-text-left h4 {
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.bottom-text-left p {
+  color: var(--orange);
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+}
+.bottom-text-left,
+span {
+  color: #e0e0e0;
+}
+/* img */
+.split-section {
+  display: flex;
+  align-items: center;
+
+  /* justify-content: space-between; */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: -5%;
+  padding: 0 30px;
+  color: white;
+}
+
+.image-half {
+  flex: 1.5;
+  width: 100%;
+}
+
+.car-composition-wrapper {
+  position: relative;
+  width: 120%;
+  aspect-ratio: 982 / 560;
+}
+
+.car-composition-wrapper .car-back {
+  position: absolute;
+  width: 60%;
+  top: 80px;
+  left: 100px;
+  mix-blend-mode: screen;
+  z-index: 2;
+}
+
+.car-composition-wrapper .light-effect {
+  position: absolute;
+  width: 70%;
+  top: 1%;
+  left: 20%;
+
+  z-index: 1;
+}
+
+.car-composition-wrapper .car-front {
+  position: absolute;
+  width: 38%;
+  top: 66%;
+  left: 39.5%;
+  z-index: 3;
+}
+/* =========================================
+   SECTION: VORTEILE (PAGE 2) - MOBILE
+========================================= */
+
+@media (max-width: 992px) {
+    .benefits-section {
+        padding: 10px 15px !important; 
+        margin-top: 20px !important; 
+    }
+
+    .vertical-watermark {
+        display: none !important;
+    }
+
+    .section-title {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 15px !important; 
+    }
+
+    .split-section {
+        display: flex !important;
+        flex-direction: column !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+    }
+
+    .image-half {
+        width: 100% !important;
+        margin-bottom: 5px !important; 
+    }
+
+    .car-composition-wrapper {
+        width: 100% !important;
+        aspect-ratio: 1 / 1.05 !important; 
+        margin: 0 auto !important;
+    }
+
+   
+    .car-composition-wrapper .light-effect {
+        width: 110% !important; 
+        left: -5% !important; 
+        top: 15% !important; 
+    }
+
+    .car-composition-wrapper .car-back {
+        width: 95% !important;
+        left: 2.5% !important;
+        top: 20% !important; 
+    }
+
+    .car-composition-wrapper .car-front {
+        width: 75% !important;
+        left: 12.5% !important;
+        top: 60% !important;
+    }
+
+    .bottom-text-left {
+        margin-top: 15px !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .bottom-text-left h4 {
+        font-size: 13px !important;
+        letter-spacing: 6px !important;
+        margin-bottom: 5px !important; 
+    }
+
+    .bottom-text-left p {
+        font-size: 10px !important;
+        letter-spacing: 2px !important;
+    }
+
+    .text-box {
+        width: 100% !important;
+        margin-top: 15px !important; 
+    }
+
+    .text-box h3 {
+        font-size: 28px !important; 
+        line-height: 1.2 !important;
+        margin-bottom: 10px !important; 
+        text-align: left !important;
+    }
+
+    .text-box p {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        text-align: left !important;
+        margin-bottom: 20px !important; 
+        color: #dddddd !important; 
+    }
+    
+    .btn-transparent {
+       display: none !important; 
+    }
+}
