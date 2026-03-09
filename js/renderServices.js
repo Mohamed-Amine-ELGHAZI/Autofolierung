@@ -40,12 +40,7 @@ const servicesData = [
     title: "LACKSCHUTZFOLIERUNG",
     image:
       "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "LACKSCHUTZFOLIERUNG",
-    image:
-      "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&q=80&w=800",
-  },
+  }
 ];
 
 function renderServices() {
