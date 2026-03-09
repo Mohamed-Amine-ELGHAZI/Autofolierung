@@ -52,8 +52,19 @@
                 </svg>
             </a>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const menuBtn = document.querySelector(".menu-btn");
+                const contactInfo = document.querySelector(".contact-info");
 
+                menuBtn.addEventListener("click", function () {
+                    contactInfo.classList.toggle("show-contact");
+                    menuBtn.classList.toggle("open"); 
+                });
+            });
+        </script>
         <header class="top-header">
+            <img src="image/pattern-11.png" class="logo" alt="Logo">
             <div class="contact-info">
                 <span>
                     <svg class="text-orange icon-svg" viewBox="0 0 24 24" fill="currentColor">
@@ -85,8 +96,8 @@
             </div>
         </header>
 
-        <img src="image/pattern-11.png" height="60px" style="position: absolute; z-index: 12; left: 146px; top: 12px;"
-            width="180px" alt="">
+        <!-- <img src="image/pattern-11.png" height="60px" style="position: absolute; z-index: 102; left: 146px; top: 12px;"
+            width="180px" alt=""> -->
         <!-- partie 1 -->
         <div class="main-frame">
             <div class="side-shape"></div>
@@ -315,7 +326,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="brands-row">
                 <h3 class="brands-title">WIR VERWENDEN DIE HOCHWERTIGSTEN<br>MARKEN AUF DEM MARKT</h3>
                 <div class="brand-logos">
