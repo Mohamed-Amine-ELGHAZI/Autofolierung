@@ -83,7 +83,7 @@
   cursor: pointer;
 }
 
-.toggle-content {
+/* .toggle-content {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -93,6 +93,19 @@
 
 .toggle-content.show-content {
   max-height: 1500px;
+  opacity: 1;
+  padding-top: 30px;
+  padding-bottom: 30px;
+} */
+
+.toggle-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.toggle-content.show-content {
   opacity: 1;
   padding-top: 30px;
   padding-bottom: 30px;

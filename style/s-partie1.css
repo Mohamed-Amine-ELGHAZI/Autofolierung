@@ -161,7 +161,7 @@
         position: relative;
         width: 100%;
         min-height: 100vh;
-        background-image: url("/image/image.png"); 
+        background-image: url("image/image.png"); 
         background-position: center top; 
         background-size: 250% 130vw; 
         background-repeat: no-repeat;
