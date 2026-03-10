@@ -4,7 +4,8 @@
 ========================================= */
 .main-frame {
     border: 1px solid rgba(255, 255, 255, 0.4);
-    margin: 0 auto 50px auto;
+    /* margin: 0 auto 50px auto; */
+    margin: 0 auto;
     width: 90%;
     max-width: 1740px;
     min-height: 91vh;
@@ -12,10 +13,10 @@
     display: flex;
     flex-direction: column;
     background-image: url("../image/image.png");
-    background-size: cover;      
-    background-position: center; 
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll; 
+    background-attachment: scroll;
 }
 
 .side-shape {
@@ -177,7 +178,7 @@
         width: 100%; 
         height: auto !important;
         min-height: auto !important;
-        padding-bottom: 0px !important; 
+        padding-bottom: 60px !important; 
         border: none; 
         border-bottom: 1.5px solid var(--border-color) !important;
         margin: 20px auto !important; 
@@ -265,7 +266,7 @@
         margin-top: 10px;
     }
 
-    .explore-shape {
+     /* .explore-shape {
         position: relative !important;
         bottom: auto !important;
         left: auto !important;
@@ -275,8 +276,15 @@
         justify-content: center;
         background-color: var(--bg-dark) !important; 
         z-index: 10 !important;
-    }
+    } */
 
+ .explore-shape {
+    position: absolute !important;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
     .explore-flex {
         margin-top: 30px !important; 
     }

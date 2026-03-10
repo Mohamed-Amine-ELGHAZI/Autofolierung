@@ -59,11 +59,12 @@
 
                 menuBtn.addEventListener("click", function () {
                     contactInfo.classList.toggle("show-contact");
-                    menuBtn.classList.toggle("open"); 
+                    menuBtn.classList.toggle("open");
                 });
             });
         </script>
         <header class="top-header">
+
             <img src="image/pattern-11.png" class="logo" alt="Logo">
             <div class="contact-info">
                 <span>
@@ -96,12 +97,10 @@
             </div>
         </header>
 
-        <!-- <img src="image/pattern-11.png" height="60px" style="position: absolute; z-index: 102; left: 146px; top: 12px;"
-            width="180px" alt=""> -->
+
         <!-- partie 1 -->
         <div class="main-frame">
             <div class="side-shape"></div>
-
             <section class="hero-section">
                 <p class="subtitle">PROTECT YOUR CAR</p>
                 <h1 class="giant-text">AUTOFOLIERUNG</h1>
@@ -129,7 +128,7 @@
 
             <div class="explore-shape">
                 <div class="explore-flex trigger-btn" style="cursor: pointer;">
-                    <span class="explore-text">EXPLORE</span>
+                    <span class="explore-text  trigger-btn">EXPLORE</span>
                     <div class="custom-arrow" id="arrowIcon"></div>
                 </div>
             </div>
@@ -186,14 +185,15 @@
     <div class="toggle-content">
 
         <div>
-            <div style="display: flex;justify-content: center;">
-                <div class="review-badge newposition">
-                    <span class="text-orange">★★★★★</span>
-                    4.9/5 FROM 253+ REVIEWS
-                </div>
-            </div>
+
 
             <section class="big-leistungen-section">
+                <div style="display: flex;justify-content: center;">
+                    <div class="review-badge newposition">
+                        <span class="text-orange">★★★★★</span>
+                        4.9/5 FROM 253+ REVIEWS
+                    </div>
+                </div>
                 <h2 class="big-leistungen-title">UNSERE LEISTUNGEN</h2>
                 <p class="big-leistungen-subtitle">FROM AUTOFOLIERUNG TO WERBETECHNIK</p>
             </section>
@@ -373,6 +373,7 @@
     </div>
     <section class="location-section toggle-content">
         <h2 class="location-title">WO SIE UNS FINDEN</h2>
+
         <div class="tabs-container">
             <ul class="location-tabs">
                 <li class="tab-item active">FRANKFURT AM MAIN</li>
@@ -381,29 +382,14 @@
                 <li class="tab-item">DORTMUND</li>
             </ul>
         </div>
-        <script>
-            let tabs = document.querySelectorAll(".location-tabs .tab-item");
-
-            tabs.forEach(tab => {
-                tab.addEventListener("click", function () {
-                    tabs.forEach(t => t.classList.remove("active"));
-                    this.classList.add("active");
-                });
-            });
-
-        </script>
 
         <div class="map-container">
-            <img src="image/map.png" alt="Map" class="map-bg" onerror="this.style.display='none'">
-
-            <!-- <div class="map-overlay">
-                <div class="map-address">
-                    Hanauer Landstraße 505A<br>
-                    60386 Frankfurt am Main
-                </div>
-            
-            </div> -->
+            <iframe id="map-iframe" &hl=de class="map-bg"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163720.83687532038!2d8.801373832524604!3d50.12113817041018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd096f477096c5%3A0x422435029b0c600!2z2YHYsdin2YbZg9mB2YjYsdiq2Iwg2KPZhNmF2KfZhtmK2Kc!5e0!3m2!1sar!2sma!4v1773112143828!5m2!1sar!2sma"
+                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
+        <script src="js/map.js"></script>
     </section>
     <!-- partie6 -->
     <div class="footer-wrapper">

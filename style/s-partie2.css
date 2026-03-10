@@ -3,8 +3,8 @@
 .benefits-section {
   position: relative;
   max-width: 1300px;
-  margin: 10px auto;
-  padding: 0 30px;
+  margin: 0 auto;
+  padding: 10px 30px;
 }
 
 .vertical-watermark {
@@ -143,11 +143,7 @@ span {
 ========================================= */
 
 @media (max-width: 992px) {
-    .benefits-section {
-        padding: 10px 15px !important; 
-        margin-top: 20px !important; 
-    }
-
+  
     .vertical-watermark {
         display: none !important;
     }
@@ -155,7 +151,7 @@ span {
     .section-title {
         font-size: 24px !important;
         line-height: 1.2 !important;
-        margin-bottom: 15px !important; 
+        margin-bottom: -60px !important;
     }
 
     .split-section {
@@ -171,7 +167,7 @@ span {
     }
 
     .car-composition-wrapper {
-        width: 100% !important;
+       width: 100% !important;
         aspect-ratio: 1 / 1.05 !important; 
         margin: 0 auto !important;
     }
