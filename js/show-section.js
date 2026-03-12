@@ -1,67 +1,59 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const triggers = document.querySelectorAll('.explore-flex');
 
-    const allButtons = document.querySelectorAll('.trigger-btn');
+    function animateNumbers(contentDiv) {
+        const statNums = contentDiv.querySelectorAll('.stat-num');
+        if (statNums.length === 0) return;
 
-    allButtons.forEach(btn => {
-        btn.addEventListener('click', function () {
+        statNums.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target')); 
+            const duration = 1500; 
+            const step = target / (duration / 16); 
+            let current = 0;
 
-            const arrow = this.querySelector('.custom-arrow');
-            if (arrow) arrow.classList.toggle('rotate-arrow');
+            
+            stat.innerText = '0';
 
-        
-            let sectionToToggle = null;
-            let currentParent = this.parentElement;
-
-            while (currentParent && currentParent.tagName !== 'BODY') {
-                let next = currentParent.nextElementSibling;
-
-                while (next) {
-                    if (next.classList.contains('toggle-content')) {
-                        sectionToToggle = next;
-                        break;
-                    }
-                    next = next.nextElementSibling;
+            
+            const updateNumber = () => {
+                current += step;
+                if (current < target) {
+                    stat.innerText = Math.ceil(current);
+                    requestAnimationFrame(updateNumber); 
+                } else {
+                    stat.innerText = target; 
                 }
+            };
+            updateNumber();
+        });
+    }
 
-                if (sectionToToggle) break;
-                currentParent = currentParent.parentElement;
+    triggers.forEach((trigger) => {
+        trigger.addEventListener('click', function () {
+            const arrow = this.querySelector('.custom-arrow');
+            let contentDiv = null;
+
+            if (this.closest('.explore-shape')) {
+                contentDiv = document.querySelector('.toggle-content');
+            } else if (this.closest('.bottom-section')) {
+                contentDiv = this.closest('.bottom-section').nextElementSibling;
             }
 
-            if (sectionToToggle) {
-                sectionToToggle.classList.toggle('show-content');
-
-                if (sectionToToggle.classList.contains("show-content")) {
-                  
-                    setTimeout(() => {
-                        sectionToToggle.style.maxHeight = sectionToToggle.scrollHeight + "px";
-                    }, 200);
+            if (contentDiv && contentDiv.classList.contains('toggle-content')) {
+                
+                arrow.classList.toggle('rotate-arrow');
 
                
-                    const stats = sectionToToggle.querySelectorAll(".stat-num");
-                    stats.forEach(stat => {
-                        if (stat.dataset.counted) return; 
-                        stat.dataset.counted = "true";
-
-                        const target = +stat.dataset.target;
-                        stat.innerText = "0";
-                        let current = 0;
-                        const increment = Math.ceil(target / 200); 
-
-                        const updateCounter = () => {
-                            current += increment;
-                            if (current > target) current = target;
-                            stat.innerText = current;
-                            if (current < target) requestAnimationFrame(updateCounter);
-                        }
-
-                        updateCounter();
-                    });
-
+                if (contentDiv.classList.contains('show-content')) {
+                    contentDiv.classList.remove('show-content');
+                    contentDiv.style.maxHeight = null; 
                 } else {
-                    sectionToToggle.style.maxHeight = "0px";
+                    
+                    contentDiv.classList.add('show-content');
+                    contentDiv.style.maxHeight = contentDiv.scrollHeight + 100 + "px"; 
+                    animateNumbers(contentDiv);
                 }
             }
-
         });
     });
 });
