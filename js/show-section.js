@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 arrow.classList.toggle('rotate-arrow');
 
-               
                 if (contentDiv.classList.contains('show-content')) {
                     contentDiv.classList.remove('show-content');
                     contentDiv.style.maxHeight = null; 
