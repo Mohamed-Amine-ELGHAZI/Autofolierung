@@ -1,0 +1,90 @@
+ .kosten-section {
+            width: 100%;
+            background-color: var(--bg-dark);
+            padding: 70px 5% 80px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .kosten-header {
+            max-width: 780px;
+            margin: 0 auto 40px;
+        }
+
+        .kosten-header h2 {
+            font-family: 'Barlow Condensed', Arial, sans-serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .kosten-header p {
+            font-family: 'Barlow', Arial, sans-serif;
+            font-size: 0.82rem;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        /* Orange top tab */
+        .kosten-tab {
+            background: var(--primary-orange) !important;
+        }
+
+        /* White card body */
+        .kosten-body {
+            background: #ffffff !important;
+        }
+
+        .kosten-body .card-doors {
+            color: #555 !important;
+        }
+
+        .kosten-body .card-divider {
+            background: #ddd !important;
+        }
+
+        .kosten-body .card-desc {
+            color: #444 !important;
+        }
+
+        .kosten-body .card-car-img {
+            filter: none !important;
+        }
+
+        /* Price in orange on white */
+        .kosten-price {
+            color: var(--primary-orange) !important;
+            font-size: 2rem !important;
+            margin-bottom: 14px !important;
+        }
+
+        /* CTA button on white bg */
+        .kosten-cta {
+            color: #333 !important;
+            border-color: #aaa !important;
+            margin-bottom: 16px !important;
+        }
+
+        .kosten-cta:hover {
+            background: var(--primary-orange) !important;
+            border-color: var(--primary-orange) !important;
+            color: #fff !important;
+        }
+
+        /* Bottom tab on white bg */
+        .kosten-bottom {
+            background: #e8e8e8 !important;
+        }
+
+        .kosten-bottom span {
+            color: #666 !important;
+        }
+
+        @media (max-width: 768px) {
+            .kosten-header h2 {
+                font-size: 1.8rem;
+            }
+        }

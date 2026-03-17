@@ -1,0 +1,82 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+       
+        }
+
+        :root {
+            --bg-dark: #000000;
+            --primary-orange: #df8c18;
+            --border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            border: 1px solid var(--primary-orange);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+            background: transparent;
+        }
+
+        .btn:hover {
+            background: var(--primary-orange);
+            color: #000;
+        }
+
+
+
+.hero {
+            position: relative;
+            height: 60vh;
+            width: 100%;
+            background-image: url('https://www.folien-werft.de/wp-content/uploads/2023/11/Scheibentoenung-85-oder-95.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .subtitle {
+            color: var(--primary-orange);
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 {
+            color: #ffffff;
+            font-size: 5vw;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 38px;
+        }
+

@@ -1,0 +1,164 @@
+.tonungsgrade-section {
+            width: 100%;
+            background-color: var(--bg-dark);
+            padding: 50px 15% 50px 15%;
+            box-sizing: border-box;
+        }
+
+        .tonung-card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 1300px;
+            height: 450px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tonung-card-header {
+            text-align: center;
+            padding: 24px 20px 0;
+        }
+
+        .tonung-card-header .section-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #111111;
+            margin-bottom: 6px;
+        }
+
+        .tonung-card-header .section-sub {
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            color: #888888;
+            text-transform: uppercase;
+        }
+
+        .tonung-percent-label {
+            position: absolute;
+            top: 90px;
+            left: 40px;
+            font-size: 4rem;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: -2px;
+            z-index: 2;
+            transition: opacity 0.4s ease;
+        }
+
+        .tonung-car-wrapper {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            
+            margin-bottom: -15px; 
+        }
+
+        .tonung-car-img {
+            width: 75%;
+            max-width: 700px;
+            object-fit: contain;
+            transition: filter 0.5s ease, opacity 0.5s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tonung-car-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.5s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        
+        .tonung-tabs {
+            width: 100%;
+            display: block;
+            line-height: 0;
+            background: #ffffff; 
+            margin-top: 25px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .tonung-tabs svg {
+            width: 100%;
+            height: 35px; 
+            display: block;
+        }
+
+        .tab-group {
+            cursor: pointer;
+        }
+
+        .tab-group .tab-bg {
+            transition: fill 0.25s ease;
+        }
+
+        .tab-group text {
+            fill: #ffffff;
+            font-size: 14px; 
+            font-family: Arial, sans-serif;
+            font-weight: 400;
+            pointer-events: none;
+        }
+
+        .tab-group:hover .tab-bg {
+            fill: #2a2a2a;
+        }
+
+        .tab-group.active .tab-bg {
+            fill: #df8c18;
+        }
+
+        .tab-group.active text {
+            fill: #ffffff;
+        }
+
+        .eigenschaften-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            margin: 50px auto 0;
+        }
+
+        .eigenschaften-title {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .eigenschaften-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .eigenschaft-card {
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+            transition: border-color 0.3s ease, background 0.3s ease;
+            cursor: default;
+        }
+
+        .eigenschaft-card:hover {
+            border-color: var(--primary-orange, #df8c18);
+            background: rgba(223, 140, 24, 0.05);
+        }

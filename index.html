@@ -53,13 +53,13 @@
             </a>
         </div>
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const menuBtn = document.querySelector(".menu-btn");
-                const contactInfo = document.querySelector(".contact-info");
+            document.addEventListener('DOMContentLoaded', function () {
+                const burgerBtn = document.getElementById('burger-menu');
+                const navMenu = document.getElementById('nav-menu');
 
-                menuBtn.addEventListener("click", function () {
-                    contactInfo.classList.toggle("show-contact");
-                    menuBtn.classList.toggle("open");
+                burgerBtn.addEventListener('click', function () {
+                    burgerBtn.classList.toggle('active');
+                    navMenu.classList.toggle('active');
                 });
             });
         </script>
@@ -90,11 +90,20 @@
                 </span>
             </div>
 
-            <div class="menu-btn">
+            <div class="menu-btn" id="burger-menu">
                 <div class="burger-line"></div>
                 <div class="burger-line"></div>
                 <div class="burger-line"></div>
             </div>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="tint-windows.html">SCHEIBEN TÖNEN</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Termin Buchen</a></li>
+                </ul>
+            </nav>
         </header>
 
 
@@ -382,7 +391,8 @@
         </div>
 
         <div class="map-container">
-            <iframe id="map-iframe" class="map-bg" src="https://maps.google.com/maps?q=Hanauer+Landstra%C3%9Fe+505a,+60386+Frankfurt&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            <iframe id="map-iframe" class="map-bg"
+                src="https://maps.google.com/maps?q=Hanauer+Landstra%C3%9Fe+505a,+60386+Frankfurt&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 title="Google Maps Standort" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>

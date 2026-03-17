@@ -1,0 +1,299 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --primary-orange: #f27c00; 
+            --card-bg: #f5f6f6; 
+            --bg-white: #ffffff; 
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        .pricing-section {
+            width: 100%;
+            background-color: var(--bg-white);
+            padding: 50px 5% 100px;
+            text-align: center;
+        }
+
+        .pricing-header {
+            margin-bottom: 40px;
+        }
+
+        .pricing-header h2 {
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-header .promo-sub {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.8rem;
+            color: #555;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Grid Desktop */
+        .pricing-grid {
+            max-width: 1050px; 
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px; 
+        }
+
+        /* Card */
+        .price-card {
+            background: var(--card-bg); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            position: relative;
+        }
+
+        .card-top-tab {
+            width: 75%;
+            background: #000000; 
+            padding: 8px 10px 7px;
+            text-align: center;
+            clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%); 
+        }
+
+        .card-top-tab span {
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .card-body {
+            width: 100%;
+            padding: 15px 16px 0px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .card-doors {
+            font-size: 0.75rem;
+            color: #444; 
+            margin-bottom: 10px;
+        }
+
+        .card-divider {
+            width: 70%;
+            height: 1px;
+            background: #d0d0d0; 
+            margin-bottom: 20px;
+        }
+
+        .card-car-img {
+            width: 100%;
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .card-desc {
+            font-size: 0.7rem;
+            color: #222; 
+            text-align: center;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .card-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-orange); 
+            line-height: 1;
+            margin-bottom: 5px;
+            margin-top: auto; 
+        }
+
+        .card-old-price {
+            font-size: 0.8rem;
+            color: #777;
+            text-decoration: line-through;
+            margin-bottom: 25px;
+        }
+
+        .card-cta {
+            display: inline-block;
+            background: #ffffff; 
+            border: 1px solid var(--primary-orange); 
+            color: #333; 
+            font-size: 0.65rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-bottom: 25px;
+            width: 85%;
+            text-align: center;
+        }
+
+        .card-cta:hover {
+            background: var(--primary-orange);
+            color: #fff;
+        }
+
+        .card-bottom-tab {
+            width: 75%; 
+            height: 30px; 
+            background: var(--bg-white); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+        }
+        
+        .card-bottom-tab span {
+            font-size: 0.65rem;
+            color: #555;
+            text-transform: uppercase;
+            margin-top: -5px;
+        }
+
+        /* Desktop CTA banner */
+        .pricing-cta-banner {
+            grid-column: 2 / 5; 
+            position: relative;
+            display: flex;
+            align-items: flex-end; 
+            padding-left: 15px; 
+        }
+
+        .banner-text {
+            text-align: left;
+            z-index: 2;
+            margin-bottom: 40px; 
+        }
+
+        .banner-text h3 {
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-size: 2.4rem; 
+            font-weight: 600;
+            color: #000;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .banner-text h3 span {
+            color: var(--primary-orange);
+        }
+
+        .pricing-cta-banner img {
+            position: absolute;
+            right: -80px; 
+            bottom: -60px; 
+            height: 340px; 
+            object-fit: contain;
+            z-index: 1;
+        }
+
+        /* Slider Controls  */
+        .slider-controls2 {
+            display: none;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0 10px;
+            grid-column: 1 / -1;
+        }
+
+        .slider-btn {
+            background-color: var(--primary-orange);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s opacity;
+        }
+
+        .slider-btn:active {
+            opacity: 0.7;
+        }
+
+    
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .pricing-grid {
+                /* F telfon nrdoha flex bach nkhdmo l'slider */
+                display: flex; 
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .price-card {
+                width: 100%;
+                max-width: 350px; 
+                display: none; 
+            }
+
+            .slider-controls {
+                display: flex; 
+            }
+
+            
+            .pricing-cta-banner {
+                width: 100%;
+                display: flex;
+                flex-direction: column; 
+                align-items: center;
+                justify-content: center;
+                padding-left: 0;
+                margin-top: 20px;
+            }
+
+            .banner-text {
+                text-align: center; 
+                margin-bottom: 20px; 
+            }
+
+            .banner-text h3 {
+                font-size: 2.2rem; 
+            }
+
+            .pricing-cta-banner img {
+                position: relative; 
+                right: auto;
+                bottom: auto;
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+            }
+        }

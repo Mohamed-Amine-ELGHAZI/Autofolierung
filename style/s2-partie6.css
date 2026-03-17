@@ -1,0 +1,109 @@
+.profi-section {
+            width: 100%;
+            background-color: var(--bg-dark);
+            padding: 70px 10% 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .profi-top {
+            max-width: 1100px;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .profi-top h2 {
+            font-family: 'Barlow Condensed', Arial, sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .profi-top p {
+            font-size: 0.82rem;
+            color: #b0b0b0;
+            line-height: 1.85;
+        }
+
+        /* Video container reuses .video-container logic but full-width */
+        .profi-video {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            width: 100%;
+            padding-top: 45%;
+            background: #111;
+            overflow: hidden;
+        }
+
+        .profi-video img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profi-video .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Car label bottom-left */
+        .profi-video .video-label {
+            position: absolute;
+            bottom: 22px;
+            left: 26px;
+            z-index: 3;
+            line-height: 1.3;
+        }
+
+        .profi-video .video-label .car-name {
+            font-family: 'Barlow Condensed', Arial, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .profi-video .video-label .car-price {
+            font-family: 'Barlow', Arial, sans-serif;
+            font-size: 0.75rem;
+            color: #aaa;
+            letter-spacing: 1px;
+            text-decoration: line-through;
+        }
+
+        @media (max-width: 768px) {
+            .profi-top {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .profi-top h2 {
+                font-size: 1.8rem;
+            }
+
+            .profi-video {
+                padding-top: 56.25%;
+            }
+
+            .profi-section {
+                padding: 50px 5% 0;
+            }
+        }
