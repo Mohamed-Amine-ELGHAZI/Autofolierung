@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap"
-        rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/s-explor.css">
@@ -24,6 +23,7 @@
 
 <body>
     <div class="mobile-wrapper">
+
         <div class="side-socials">
             <a href="#" class="icon-box">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -41,6 +41,7 @@
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
             </a>
+
             <a href="#" class="icon-box">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round">
@@ -51,22 +52,13 @@
                     <path d="M9 16l2 2 4-4"></path>
                 </svg>
             </a>
+
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const burgerBtn = document.getElementById('burger-menu');
-                const navMenu = document.getElementById('nav-menu');
-
-                burgerBtn.addEventListener('click', function () {
-                    burgerBtn.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-            });
-        </script>
+        
         <header class="top-header">
-
             <img src="image/pattern-11.png" class="logo" alt="Logo">
             <div class="contact-info">
+
                 <span>
                     <svg class="text-orange icon-svg" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -74,6 +66,7 @@
                     </svg>
                     HANAUER LANDSTRAßE 505A, 60386 FRANKFURT AM MAIN
                 </span>
+
                 <span>
                     <svg class="text-orange icon-svg" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -81,6 +74,7 @@
                     </svg>
                     069 348795475
                 </span>
+
                 <span>
                     <svg class="text-orange icon-svg" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -88,6 +82,7 @@
                     </svg>
                     INFO@HESSEN-FOLIERUNG.DE
                 </span>
+
             </div>
 
             <div class="menu-btn" id="burger-menu">
@@ -105,6 +100,17 @@
                 </ul>
             </nav>
         </header>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const burgerBtn = document.getElementById('burger-menu');
+                const navMenu = document.getElementById('nav-menu');
+
+                burgerBtn.addEventListener('click', function () {
+                    burgerBtn.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            });
+        </script>
 
 
         <!-- partie 1 -->
