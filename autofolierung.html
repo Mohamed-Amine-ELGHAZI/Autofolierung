@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autofolierung Frankfurt – Hessen Folierung</title>
+
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Shared existing stylesheets -->
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/s-explor.css">
+    <link rel="stylesheet" href="style/s2-partie1.css">
+    <link rel="stylesheet" href="style/s2-partie2.css">
+    <link rel="stylesheet" href="style/s2-partie3.css">
+    <link rel="stylesheet" href="style/s2-partie4.css">
+    <link rel="stylesheet" href="style/s2-partie5.css">
+    <link rel="stylesheet" href="style/s2-partie6.css">
+    <link rel="stylesheet" href="style/s2-partie7.css">
+    <link rel="stylesheet" href="style/s-partie4.css">
+    <link rel="stylesheet" href="style/s-partie5.css">
+    <link rel="stylesheet" href="style/s-partie6.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="icon" type="image/png" href="image/pattern-11.png">
+
+    <style>
+        /* ============================================================
+           ROOT & RESET
+        ============================================================ */
+        :root {
+            --bg-dark: #000000;
+            --bg-white: #ffffff;
+            --orange: #df8c18;
+            --border-dim: rgba(255, 255, 255, 0.12);
+            --text-muted: #aaaaaa;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ============================================================
+           SHARED UTILITIES
+        ============================================================ */
+
+        /* Orange outline button */
+        .btn-outline {
+            display: inline-block;
+            padding: 12px 35px;
+            border: 1px solid var(--orange);
+            color: #fff;
+            background: transparent;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--orange);
+            color: #000;
+        }
+
+        /* ============================================================
+           S1 – HERO
+        ============================================================ */
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80');
+        }
+
+        /* ============================================================
+           S2 – FAHRZEUG FOLIEREN  video thumbnail city photo
+        ============================================================ */
+        .af-video-thumb {
+            background-image: url('https://images.unsplash.com/photo-1467226632440-65f0b4957563?w=1200&q=80') !important;
+        }
+
+        /* ============================================================
+           S3 & S4 — DARK SPLIT SECTIONS
+           S3: Image+play LEFT (~45%) / Bold heading+text RIGHT (~55%)
+           S4: Text LEFT (~45%) / Car photo RIGHT (~55%)
+           Background: pure black, all text white
+        ============================================================ */
+        .af-split-section {
+            width: 100%;
+            background: #000;
+            padding: 60px 8%;
+        }
+
+        /* Remove top padding on S4 so the two blocks feel connected */
+        .af-split-section+.af-split-section {
+            padding-top: 40px;
+        }
+
+        .af-split-inner {
+            display: flex;
+            align-items: flex-start;
+            gap: 55px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* S4: text LEFT, image RIGHT — just swap order in DOM, no flex trick needed */
+
+        /* ── Media column ── */
+        .af-split-media {
+            position: relative;
+            flex: 0 0 44%;
+            max-width: 44%;
+        }
+
+        .af-split-media img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* S3 image height — shorter, portrait-ish */
+        .af-split-media--s3 img {
+            height: 310px;
+        }
+
+        /* S4 image height — taller, landscape */
+        .af-split-media--s4 img {
+            height: 380px;
+        }
+
+        /* Centered orange play button on S3 image */
+        .af-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 52px;
+            height: 52px;
+            background: var(--orange);
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .af-play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.12);
+        }
+
+        /* ── Text column ── */
+        .af-split-text {
+            flex: 1;
+        }
+
+        /* S3: large bold white heading */
+        .af-split-heading {
+            font-size: clamp(1.1rem, 1.75vw, 1.45rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 18px;
+        }
+
+        /* S4: smaller white heading */
+        .af-vorteile-heading {
+            font-size: clamp(1rem, 1.6vw, 1.3rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 16px;
+        }
+
+        /* Body paragraphs */
+        .af-split-text p {
+            font-size: 0.8rem;
+            color: #bbb;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .af-split-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ============================================================
+           S4b — DARK BG-IMAGE SECTION: heading + 2×3 SPACED grid + CTA
+        ============================================================ */
+        .af-vorteile-dark {
+            position: relative;
+            width: 100%;
+            padding: 70px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Background car image with heavy dark overlay */
+        .af-vorteile-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1555353540-64580b51c258?w=1600&q=80');
+            background-size: cover;
+            background-position: center 55%;
+            z-index: 0;
+        }
+
+        .af-vorteile-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.82);
+        }
+
+        /* Content sits above overlay */
+        .af-vorteile-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .af-vorteile-dark-title {
+            font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.6;
+            margin-bottom: 38px;
+        }
+
+        /* 2 rows × 3 cols — SPACED APART with gap */
+        .af-advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 34px;
+        }
+
+        /* Each card: transparent bg, subtle white border */
+        .af-adv-card {
+            padding: 26px 20px;
+            font-size: 0.76rem;
+            font-weight: 500;
+            color: #fff;
+            line-height: 1.55;
+            text-align: center;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .af-adv-card:hover {
+            border-color: var(--orange);
+            background: rgba(223, 140, 24, 0.07);
+        }
+
+        /* CTA button */
+        .af-vorteile-cta {
+            display: inline-block;
+            padding: 11px 34px;
+            border: 1px solid var(--orange);
+            color: #fff;
+            background: transparent;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .af-vorteile-cta:hover {
+            background: var(--orange);
+            color: #000;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .af-split-section {
+                padding: 40px 5%;
+            }
+
+            .af-split-section+.af-split-section {
+                padding-top: 30px;
+            }
+
+            .af-split-inner {
+                flex-direction: column !important;
+                gap: 24px;
+            }
+
+            .af-split-media {
+                flex: none;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .af-split-media--s3 img,
+            .af-split-media--s4 img {
+                height: 220px;
+            }
+
+            .af-vorteile-dark {
+                padding: 50px 5%;
+            }
+
+            .af-advantage-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .af-advantage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           S5 – WIE HOCH SIND DIE KOSTEN
+           Dark bg, centered title block + image/text split + footer paragraph
+        ============================================================ */
+        .kosten-section {
+            width: 100%;
+            background: #000;
+            padding: 70px 8% 50px;
+        }
+
+        /* Centered heading block */
+        .kosten-title-block {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .kosten-h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .kosten-h2 {
+            font-size: clamp(1rem, 1.8vw, 1.4rem);
+            font-weight: 400;
+            color: #fff;
+            letter-spacing: 0.3px;
+        }
+
+        /* Split row: image LEFT (~48%) + text RIGHT (~52%) */
+        .kosten-split {
+            display: flex;
+            align-items: flex-start;
+            gap: 55px;
+            max-width: 1100px;
+            margin: 0 auto 50px;
+        }
+
+        .kosten-img {
+            flex: 0 0 46%;
+            max-width: 46%;
+        }
+
+        .kosten-img img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .kosten-text {
+            flex: 1;
+        }
+
+        /* Large bold white subheading — 3 lines in the reference */
+        .kosten-subheading {
+            font-size: clamp(1rem, 1.7vw, 1.35rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .kosten-text p {
+            font-size: 0.8rem;
+            color: #bbb;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .kosten-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Full-width centered paragraph below the split */
+        .kosten-footer-text {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 0.82rem;
+            color: #bbb;
+            line-height: 1.75;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .kosten-section {
+                padding: 50px 5% 40px;
+            }
+
+            .kosten-split {
+                flex-direction: column;
+                gap: 28px;
+            }
+
+            .kosten-img {
+                flex: none;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .kosten-img img {
+                height: 220px;
+            }
+
+            .kosten-h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ============================================================
+           S7 – FRAGEN & ANTWORTEN + SLIDER + 3×3 GALLERY
+           All on pure black background
+        ============================================================ */
+        .faq-hero-section {
+            width: 100%;
+            background: #000;
+            padding: 70px 0 0;
+            overflow: hidden;
+        }
+
+        /* ── Centered heading ── */
+        .fhs-heading {
+            text-align: center;
+            padding: 0 5%;
+            margin-bottom: 40px;
+        }
+
+        .fhs-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        /* ── Slider wrapper ── */
+
+
+        /* ── 3×3 gallery grid ── */
+        .fhs-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            padding: 0 5% 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fhs-gallery-item {
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .fhs-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease, filter 0.4s ease;
+            filter: brightness(0.88);
+        }
+
+        .fhs-gallery-item:hover img {
+            transform: scale(1.04);
+            filter: brightness(1);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .fhs-track-outer {
+                padding: 0 4%;
+            }
+
+            .fhs-slide {
+                flex: 0 0 92%;
+            }
+
+            .fhs-slide img {
+                height: 220px;
+            }
+
+            .fhs-nav--prev {
+                left: calc(4% - 19px);
+            }
+
+            .fhs-nav--next {
+                right: calc(4% - 19px);
+            }
+
+            .fhs-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 4% 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fhs-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           S6 – TABBED PRICING SECTION
+           Dark header + tab switcher + white card grid
+        ============================================================ */
+
+        /* Outer wrapper */
+        .pricing-tabs-section {
+            width: 100%;
+        }
+
+        /* ── Dark header block ── */
+        .pts-header {
+            background: #000;
+            padding: 40px 5% 0;
+            text-align: center;
+        }
+
+        .pts-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        /* ── Tab switcher ── */
+        .pts-tabs {
+            display: inline-flex;
+            border-bottom: none;
+            gap: 0;
+        }
+
+        .pts-tab {
+            padding: 12px 36px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        /* Inactive tab: dark bg, white text */
+        .pts-tab {
+            background: #1a1a1a;
+            color: #aaa;
+        }
+
+        /* Active tab: white bg, black text */
+        .pts-tab--active {
+            background: #fff;
+            color: #000;
+        }
+
+        .pts-tab:hover:not(.pts-tab--active) {
+            background: #2a2a2a;
+            color: #fff;
+        }
+
+        /* ── Panel (white background card area) ── */
+        .pts-panel {
+            background: #fff;
+            padding: 40px 4% 30px;
+        }
+
+        .pts-panel--hidden {
+            display: none;
+        }
+
+        /* Panel inner heading */
+        .pts-panel-title {
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            font-weight: 900;
+            color: #111;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        /* ── 4-col card grid ── */
+      
+
+        /* ============================================================
+           RESPONSIVE
+        ============================================================ */
+        @media (max-width: 900px) {
+            .vollf-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .vollf-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════
+     SIDE SOCIALS  ← untouched
+    ═══════════════════════════════════════════════════════ -->
+    <div class="side-socials">
+        <a href="#" class="icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+            </svg>
+        </a>
+        <a href="#" class="icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+        <a href="#" class="icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <path d="M9 16l2 2 4-4"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     HEADER  ← untouched
+═══════════════════════════════════════════════════════ -->
+    <header class="top-header">
+        <img src="image/pattern-11.png" class="logo" alt="Logo">
+        <div class="contact-info">
+            <span>
+                <svg class="text-orange icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+                HANAUER LANDSTRAßE 505A, 60386 FRANKFURT AM MAIN
+            </span>
+            <span>
+                <svg class="text-orange icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.03 21c.76 0 .99-.66.99-1.2v-3.43c0-.54-.45-.99-.99-.99z" />
+                </svg>
+                069 348795475
+            </span>
+            <span>
+                <svg class="text-orange icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+                <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                    data-cfemail="e980878f86a9818c9a9a8c87c48f8685808c9b9c878ec78d8c">[email&#160;protected]</a>
+            </span>
+        </div>
+        <div class="menu-btn" id="burger-menu">
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+        </div>
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="tint-windows.html">SCHEIBEN TÖNEN</a></li>
+                <li><a href="autofolierung.html">AUTOFOLIERUNG</a></li>
+                <li><a href="#">Kontakt</a></li>
+                <li><a href="#">Termin Buchen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var burger = document.getElementById('burger-menu');
+            var nav = document.getElementById('nav-menu');
+            burger.addEventListener('click', function () {
+                burger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════
+     S1 – HERO
+     Full dark car background, big title AUTOFOLIERUNG, CTA button
+═══════════════════════════════════════════════════════ -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="subtitle">P R O T E C T &nbsp; Y O U R &nbsp; C A R</p>
+            <h1>AUTOFOLIERUNG</h1>
+            <a href="#" class="btn">KOSTENLOSE BERATUNG</a>
+        </div>
+        <div class="explore-shape">
+            <div class="explore-flex" id="heroExplore" style="cursor:pointer;">
+                <span class="explore-text">EXPLORE</span>
+                <div class="custom-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     S2 – FAHRZEUG FOLIEREN IN FRANKFURT
+     Centred heading, city-photo video thumbnail with play btn
+═══════════════════════════════════════════════════════ -->
+    <section class="main-section" id="s2">
+        <h2 class="main-title">FAHRZEUG FOLIEREN (FOLIERUNG) <span class="highlight">IN FRANKFURT</span></h2>
+        <p class="sub-title">– PROFESSIONELLE AUTOFOLIERUNG VON EXPERTEN –</p>
+
+        <div class="video-container af-video-thumb">
+            <div class="video-overlay">
+                <button class="play-btn" aria-label="Video abspielen">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="footer-link">
+            <a href="#">KOSTENLOSE BERATUNG</a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     S3 – IMAGE WITH PLAY BTN (LEFT) + BOLD HEADING + TEXT (RIGHT)
+     Dark background, white text
+═══════════════════════════════════════════════════════ -->
+    <section class="af-split-section">
+        <div class="af-split-inner">
+
+            <!-- LEFT: image with centered orange play button -->
+            <div class="af-split-media af-split-media--s3">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+                    alt="Autofolierung Detailarbeit"
+                    onerror="this.src='https://placehold.co/520x310/111/333?text=Foto'">
+                <button class="af-play-btn" aria-label="Video abspielen">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
+
+            <!-- RIGHT: bold heading + paragraph -->
+            <div class="af-split-text">
+                <h2 class="af-split-heading">Wenn Ihnen eine Neulackierung Ihres Fahrzeugs zu teuer ist, ist eine
+                    Autofolierung (engl. Car Wrapping) die richtige Wahl.</h2>
+                <p>Im Vergleich zeigen sich die Kosten einer Folierung für Ihr Auto deutlich geringer und Sie haben den
+                    Vorteil flexibel zu bleiben. Denn Sie entscheiden beim Auto folieren in Frankfurt über die
+                    Fahrzeugfarbe, ohne für immer daran gebunden zu sein. Die Autofolierung lässt sich problemlos nach
+                    Jahren wieder rückstandslos lösen. Der klare Vorteil zeigt sich beim Wiederverkauf, denn hier ist
+                    der Lack mindestens ebenso wichtig wie Laufleistung und Pflegezustand. Nachdem Sie Ihr Fahrzeug bei
+                    uns folieren lassen haben, wird der Lack dauerhaft vor umweltbedingten und chemischen Einflüssen
+                    geschützt. Wenn Sie die Folie günstig, schnell, einfach und nahezu unsichtbar wieder entfernen,
+                    erstrahlt dieser im Glanz eines Neuwagens.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     S4 – TEXT (LEFT) + CAR PHOTO (RIGHT)
+     Dark background, white text
+═══════════════════════════════════════════════════════ -->
+    <section class="af-split-section">
+        <div class="af-split-inner">
+
+            <!-- LEFT: heading + two paragraphs -->
+            <div class="af-split-text">
+                <h2 class="af-vorteile-heading">Die Vorteile beim Fahrzeug<br>folieren</h2>
+                <p>Mit einer Pkw Folierung geben Sie Ihrem Auto einen ganz neuen Look. Dabei haben Sie freie Wahl, was
+                    die Farbe beim Auto folieren betrifft. Darüber hinaus können wir für unterschiedliche Effekte
+                    sorgen. Wie wäre es, wenn Sie Ihr Auto matt folieren lassen? Gerne schauen wir zusammen, welches
+                    Design Ihnen am besten gefällt und zu Ihrem Fahrzeug passt.</p>
+                <p>Ein weiterer Vorteil zeigt sich in den geringen Kosten der Folierung für Ihr Auto. Eine Lackierung
+                    ist im Vergleich deutlich teurer. Vor allem wenn Sie Ihr komplettes Auto folieren lassen möchten,
+                    sind die niedrigen Kosten unschlagbar. Gleiches gilt für den Zeitaufwand. Eine Autofolierung führt
+                    unser professionelles Team in kürzester Zeit durch.</p>
+            </div>
+
+            <!-- RIGHT: car image (no play button) -->
+            <div class="af-split-media af-split-media--s4">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80"
+                    alt="Porsche Autofolierung Frankfurt"
+                    onerror="this.src='https://placehold.co/520x380/111/333?text=Auto'">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     S4b – DARK BG + CENTERED HEADING + 2×3 ADVANTAGE GRID + CTA
+     Full-width dark section with background car image
+═══════════════════════════════════════════════════════ -->
+    <section class="af-vorteile-dark">
+        <!-- Background image overlay -->
+        <div class="af-vorteile-bg"></div>
+
+        <div class="af-vorteile-content">
+            <h2 class="af-vorteile-dark-title">
+                Die Vorteile im Überblick, wenn Sie bei uns in Frankfurt<br>
+                Ihr Fahrzeug folieren (Folierung) lassen:
+            </h2>
+
+            <!-- 2 rows × 3 cols grid -->
+            <div class="af-advantage-grid">
+                <div class="af-adv-card">Auswahl zwischen einer Vielzahl<br>von Farben und Effekten</div>
+                <div class="af-adv-card">Sicherer Schutz des Lackes vor<br>Umwelteinflüssen</div>
+                <div class="af-adv-card">Steigerung des<br>Wiederverkaufswertes</div>
+                <div class="af-adv-card">Möglichkeit der Voll- oder<br>Teilfolierung</div>
+                <div class="af-adv-card">Geringe Kosten bei der<br>Vollfolierung oder Teilfolierung</div>
+                <div class="af-adv-card">Sie haben Ihr Fahrzeug meist<br>schon nach 3 Tagen zurück</div>
+            </div>
+
+            <!-- CTA button -->
+            <a href="#" class="af-vorteile-cta">KOSTENLOSE BERATUNG</a>
+        </div>
+    </section>
+
+    <!-- Divider → DIE KOSTEN -->
+    <div class="bottom-section">
+        <div class="line"></div>
+        <div class="shape-wrapper">
+            <div class="explore-flex trigger-btn" style="cursor:pointer;">
+                <span class="explore-text">DIE KOSTEN</span>
+                <div class="custom-arrow"></div>
+            </div>
+        </div>
+        <div class="line"></div>
+    </div>
+
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     S5 – WIE HOCH SIND DIE KOSTEN
+     Centered heading block + image/text split + full-width paragraph
+═══════════════════════════════════════════════════════ -->
+    <section class="kosten-section">
+
+        <!-- Centered title block -->
+        <div class="kosten-title-block">
+            <h2 class="kosten-h1">WIE HOCH SIND DIE KOSTEN</h2>
+            <p class="kosten-h2">beim Auto folieren in Frankfurt?</p>
+        </div>
+
+        <!-- Split: car image LEFT + bold heading + paragraphs RIGHT -->
+        <div class="kosten-split">
+
+            <div class="kosten-img">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=900&q=80"
+                    alt="Tesla Autofolierung Frankfurt"
+                    onerror="this.src='https://placehold.co/600x380/111/333?text=Auto'">
+            </div>
+
+            <div class="kosten-text">
+                <h3 class="kosten-subheading">Wir unterscheiden bei den Kosten für die Autofolierung zwischen der
+                    Vollfolierung und Teilfolierung.</h3>
+                <p>Die Kosten, wenn wir Ihr Auto komplett folieren, richten sich nach der Fahrzeugart. Wir beginnen mit
+                    der gewünschten Preisgestaltung der Folierung bei Kleinwagen, da sich hier weniger Fläche zeigt als
+                    bei einem SUV. Coupes, Cabrios mit Stoffdach und Sportwagen bilden darüber hinaus je eine eigene
+                    Preisklasse.</p>
+                <p>Bei der Teilfolierung richtet sich der Preis, wenn Sie Ihr Auto bei uns folieren lassen, nach dem
+                    gewünschten Autoteil. Selbstverständlich können Sie diese kombinieren und haben so die Wahl sich ein
+                    Paket der Teilfolierungen zusammenzustellen. Ob Motorhaube, Dach, Spiegelkappen oder Frontgrill –
+                    wir sorgen dafür, dass unsere hochwertigen Folien exakt auf den von Ihnen gewünschten Bereich
+                    angebracht werden. Mit höchster Präzision und unter Einsatz modernster Technologie werden Sie von
+                    dem Ergebnis der Autofolierung von Ihren Experten in Frankfurt begeistert sein.</p>
+            </div>
+
+        </div>
+
+        <!-- Full-width centered paragraph below split -->
+        <p class="kosten-footer-text">Nachfolgend finden Sie eine Preisübersicht. Nehmen Sie am besten direkt Kontakt
+            mit uns auf und stellen Sie Ihre Anfrage für das Auto folieren in Frankfurt. Zusammen finden wir Ihren
+            individuell gestalteten Preis.</p>
+
+    </section>
+
+    <!-- Divider → DIE KOSTEN (bottom of section, leads to pricing) -->
+    <div class="bottom-section">
+        <div class="line"></div>
+        <div class="shape-wrapper">
+            <div class="explore-flex trigger-btn" style="cursor:pointer;">
+                <span class="explore-text">DIE KOSTEN</span>
+                <div class="custom-arrow"></div>
+            </div>
+        </div>
+        <div class="line"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     S6 – PRICING: VOLLFOLIERUNG / TEILFOLIERUNG TABS
+     Matches reference: dark header, tab switcher, white card grid
+═══════════════════════════════════════════════════════ -->
+    <section class="pricing-tabs-section">
+
+        <!-- Dark header with section title -->
+        <div class="pts-header">
+            <h2 class="pts-title">WIE HOCH SIND DIE KOSTEN</h2>
+
+            <!-- Tab switcher -->
+            <div class="pts-tabs">
+                <button class="pts-tab pts-tab--active" data-tab="voll">VOLLFOLIERUNG PREISE</button>
+                <button class="pts-tab" data-tab="teil">TEILFOLIERUNG PREISE</button>
+            </div>
+        </div>
+
+        <!-- ── VOLLFOLIERUNG PANEL ── -->
+        <div class="pts-panel" id="tab-voll">
+
+            <h3 class="pts-panel-title">VOLLFOLIERUNG PREISE</h3>
+
+            <!-- 4-col grid, 3 rows = 12 cards -->
+            <div class="pricing-section">
+
+                <div id="dynamic-pricing-grid" class="pricing-grid"></div>
+
+            </div><!-- /pts-grid -->
+            <script src="js/renderPricing.js" ></script>
+            <!-- Footer warning -->
+            <p class="pts-achtung"><strong>ACHTUNG!</strong> Wir Folieren keine: Zierleisten im Innenraum, Embleme,
+                Motorräder, Roller, Möbel, Boote uswf!! NUR PKWs !!</p>
+
+        </div><!-- /tab-voll -->
+
+        <!-- ── TEILFOLIERUNG PANEL (hidden by default) ── -->
+        <div class="pts-panel pts-panel--hidden" id="tab-teil">
+
+            <h3 class="pts-panel-title">TEILFOLIERUNG PREISE</h3>
+
+            <div class="pts-grid">
+
+                <div class="pts-card">
+                    <div class="pts-card-tab">MOTORHAUBE</div>
+                    <p class="pts-card-sub">Alle Fahrzeugklassen</p>
+                    <img class="pts-card-img"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/VW_Passat_Variant_B8_2.0_TDI_DSG_Comfortline_%28facelift%2C_silber%29_--_2019_--_3284.jpg/1280px-VW_Passat_Variant_B8_2.0_TDI_DSG_Comfortline_%28facelift%2C_silber%29_--_2019_--_3284.jpg"
+                        alt="Motorhaube" onerror="this.src='https://placehold.co/200x90/eee/999?text=Auto'">
+                    <p class="pts-card-label">Teilfolierung</p>
+                    <p class="pts-card-ab">ab</p>
+                    <p class="pts-card-price">250,00 €</p>
+                    <a href="#" class="pts-card-cta">KOSTENLOSE BERATUNG</a>
+                </div>
+
+                <div class="pts-card">
+                    <div class="pts-card-tab">DACH</div>
+                    <p class="pts-card-sub">Alle Fahrzeugklassen</p>
+                    <img class="pts-card-img"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Mercedes-Benz_W213_E350_IAA_2015_%281%29.jpg/1280px-Mercedes-Benz_W213_E350_IAA_2015_%281%29.jpg"
+                        alt="Dach" onerror="this.src='https://placehold.co/200x90/eee/999?text=Auto'">
+                    <p class="pts-card-label">Teilfolierung</p>
+                    <p class="pts-card-ab">ab</p>
+                    <p class="pts-card-price">300,00 €</p>
+                    <a href="#" class="pts-card-cta">KOSTENLOSE BERATUNG</a>
+                </div>
+
+                <div class="pts-card">
+                    <div class="pts-card-tab">SPIEGELKAPPEN</div>
+                    <p class="pts-card-sub">Alle Fahrzeugklassen</p>
+                    <img class="pts-card-img"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/VW_Passat_Variant_B8_2.0_TDI_DSG_Comfortline_%28facelift%2C_silber%29_--_2019_--_3284.jpg/1280px-VW_Passat_Variant_B8_2.0_TDI_DSG_Comfortline_%28facelift%2C_silber%29_--_2019_--_3284.jpg"
+                        alt="Spiegelkappen" onerror="this.src='https://placehold.co/200x90/eee/999?text=Auto'">
+                    <p class="pts-card-label">Teilfolierung</p>
+                    <p class="pts-card-ab">ab</p>
+                    <p class="pts-card-price">80,00 €</p>
+                    <a href="#" class="pts-card-cta">KOSTENLOSE BERATUNG</a>
+                </div>
+
+                <div class="pts-card">
+                    <div class="pts-card-tab">FRONTGRILL</div>
+                    <p class="pts-card-sub">Alle Fahrzeugklassen</p>
+                    <img class="pts-card-img"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Mercedes-Benz_W213_E350_IAA_2015_%281%29.jpg/1280px-Mercedes-Benz_W213_E350_IAA_2015_%281%29.jpg"
+                        alt="Frontgrill" onerror="this.src='https://placehold.co/200x90/eee/999?text=Auto'">
+                    <p class="pts-card-label">Teilfolierung</p>
+                    <p class="pts-card-ab">ab</p>
+                    <p class="pts-card-price">120,00 €</p>
+                    <a href="#" class="pts-card-cta">KOSTENLOSE BERATUNG</a>
+                </div>
+
+            </div>
+
+            <p class="pts-achtung"><strong>ACHTUNG!</strong> Wir Folieren keine: Zierleisten im Innenraum, Embleme,
+                Motorräder, Roller, Möbel, Boote uswf!! NUR PKWs !!</p>
+
+        </div><!-- /tab-teil -->
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     S7 – FRAGEN & ANTWORTEN + SLIDER + GALLERY
+     Dark theme: heading, full-width slider, 3×3 photo grid
+═══════════════════════════════════════════════════════ -->
+    <section class="faq-hero-section">
+
+        <!-- Centered heading -->
+        <div class="fhs-heading">
+            <h2 class="fhs-title">FRAGEN &amp; ANTWORTEN<br>ZU AUTOFOLIERUNG</h2>
+        </div>
+        <div class="toggle-conten">
+            <h1 class="section-title">UNSERE ARBEIT</h1>
+
+            <div class="slider-container" id="sliderContainer">
+                <div class="slider-track" id="sliderTrack">
+                </div>
+
+                <button class="nav-btn prev-btn" id="prevBtn" onclick="moveSlide(-1)">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 19l-7-7 7-7" stroke-linecap="square" />
+                    </svg>
+                </button>
+                <button class="nav-btn next-btn" id="nextBtn" onclick="moveSlide(1)">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 5l7 7-7 7" stroke-linecap="square" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="slider-controls">
+                <div class="dots" id="dotsContainer"></div>
+                <div class="counter">
+                    <span class="counter-current" id="currentCount">01</span>
+                    <span class="counter-total" id="totalCount">/04</span>
+                </div>
+            </div>
+
+            <button class="all-works-btn">ALL WORKS</button>
+            <script src="js/initSlider.js">
+            </script>
+        </div><!-- /fhs-slider-wrap -->
+
+        <!-- 3×3 photo gallery grid -->
+
+        <div class="fhs-gallery">
+            <div class="fhs-gallery-item"><img
+                    src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80" alt="Gallery 1"></div>
+            <div class="fhs-gallery-item"><img
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Gallery 2"></div>
+            <div class="fhs-gallery-item"><img
+                    src="https://images.unsplash.com/photo-1555353540-64580b51c258?w=600&q=80" alt="Gallery 3"></div>
+            <div class="fhs-gallery-item"><img
+                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" alt="Gallery 4"></div>
+            <div class="fhs-gallery-item"><img
+                    src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80" alt="Gallery 5"></div>
+            <div class="fhs-gallery-item"><img
+                    src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80" alt="Gallery 6"></div>
+            <div class="fhs-gallery-item"><img
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Gallery 7"></div>
+            <div class="fhs-gallery-item"><img
+                    src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80" alt="Gallery 8"></div>
+            <div class="fhs-gallery-item"><img
+                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" alt="Gallery 9"></div>
+        </div>
+
+    </section>
+
+    <!-- Divider -->
+    <div class="bottom-section">
+        <div class="line"></div>
+        <div class="shape-wrapper">
+            <div class="explore-flex trigger-btn" style="cursor:pointer;">
+                <div class="explore-text">WO SIE UNS FINDEN</div>
+                <div class="custom-arrow"></div>
+            </div>
+        </div>
+        <div class="line"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     MAP / LOCATION  ← untouched
+═══════════════════════════════════════════════════════ -->
+    <section class="location-section toggle-content">
+        <h2 class="location-title">WO SIE UNS FINDEN</h2>
+
+        <div class="tabs-container">
+            <ul class="location-tabs">
+                <li class="tab-item active" data-city="FRANKFURT AM MAIN">FRANKFURT AM MAIN</li>
+                <li class="tab-item" data-city="STUTTGART">STUTTGART</li>
+                <li class="tab-item" data-city="ESSEN">ESSEN</li>
+                <li class="tab-item" data-city="DORTMUND">DORTMUND</li>
+            </ul>
+        </div>
+
+        <div class="map-container">
+            <iframe id="map-iframe" class="map-bg"
+                src="https://maps.google.com/maps?q=Hanauer+Landstra%C3%9Fe+505a,+60386+Frankfurt&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                title="Google Maps Standort" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <script src="js/map.js"></script>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     FOOTER  ← untouched
+═══════════════════════════════════════════════════════ -->
+    <div class="footer-wrapper">
+        <img src="image/image.png" alt="background" class="footer-bg">
+
+        <footer class="site-footer">
+            <div class="top-border-row">
+                <div class="flat-top" style="width:8%;"></div>
+                <div class="slant slant-down"></div>
+                <div class="notch-flat">
+                    <img src="image/pattern-11.png" class="stats-logo" style="margin-bottom:19%;"
+                        alt="Hessen Folierung Logo">
+                </div>
+                <div class="slant slant-up"></div>
+                <div class="flat-top" style="flex:1;"></div>
+                <div class="slant slant-down"></div>
+                <div class="notch-flat">
+                    <div class="footer-socials">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.272 2.69.073 7.053.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="slant slant-up"></div>
+                <div class="flat-top" style="width:3%;"></div>
+            </div>
+
+            <div class="footer-main">
+                <img src="image/pattern-11.png" class="mobile-logo" alt="Hessen Folierung Logo">
+
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>FRANKFURT AM MAIN</h4>
+                        <p>Hanauer Landstraße 505A<br>60386 Frankfurt am Main</p>
+                        <h4 class="mt-4">DARMSTADT</h4>
+                        <p>(nur nach Termin Absprache)</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>HESSEN-FOLIERUNG</h4>
+                        <p>069 348795475<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                data-cfemail="7d14131b123d15180e0e1813501b121114180f08131a531918">[email&#160;protected]</a>
+                        </p>
+                        <h4 class="mt-4">ÖFFNUNGSZEITEN</h4>
+                        <p>Mo bis Do: 9:00 - 18:00 Uhr<br>Freitag: 8:00 - 17:00 Uhr<br>Samstag: geschlossen</p>
+                    </div>
+                    <div class="footer-col footer-links-col">
+                        <ul class="footer-links">
+                            <li><a href="#">Jobs</a></li>
+                            <li><a href="#">Kontakt</a></li>
+                            <li><a href="#">AGBs</a></li>
+                            <li><a href="#">Paint Protection Film</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col footer-col-last">
+                        <h2>Professionelle Autofolierung<br>von Experten</h2>
+                    </div>
+                </div>
+
+                <div class="footer-graphics">
+                    <img src="image/image-2.png" alt="extra decoration" class="footer-extra-img">
+                    <img src="image/pattern-23.png" alt="car" class="footer-car">
+                    <div class="mobile-socials">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.272 2.69.073 7.053.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="footer-bottom">
+            © 2025 Hessen Folierung &nbsp;|&nbsp; Datenschutz &nbsp;|&nbsp; Impressum
+        </div>
+    </div>
+</body>
