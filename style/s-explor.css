@@ -64,15 +64,14 @@
 }
 
 .custom-arrow {
-  transform: rotate(180deg);
-  transition: transform 0.4s ease-in-out;
-  cursor: pointer;
+    transform: rotate(0deg); 
+    transition: transform 0.4s ease-in-out;
 }
+
 
 .custom-arrow.rotate-arrow {
-  transform: rotate(0deg) !important;
+    transform: rotate(180deg) !important;
 }
-
 .bottom-section {
   display: flex;
   align-items: center;

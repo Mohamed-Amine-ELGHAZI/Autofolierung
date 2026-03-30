@@ -1,82 +1,288 @@
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-       
-        }
 
-        :root {
-            --bg-dark: #000000;
-            --primary-orange: #df8c18;
-            --border-color: rgba(255, 255, 255, 0.4);
-        }
+.main-frame {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* margin: 0 auto 50px auto; */
+    margin: 0 auto;
+    width: 90%;
+    
+    min-height: 91vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../image/image.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
 
-        body {
-            background-color: var(--bg-dark);
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 35px;
-            border: 1px solid var(--primary-orange);
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            transition: 0.3s ease;
-            background: transparent;
-        }
+.side-shape {
+    position: absolute;
+    top: -1px;
+    left: 40px;   
+    width: 250px;
+    height: 55px;
+    z-index: 10;
+}
+  
+.side-shape::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-top: none;
+    transform: perspective(100px) rotateX(-30deg);
+    transform-origin: top;
+    background-color: var(--bg-dark); 
+    z-index: -1;
+}
 
-        .btn:hover {
-            background: var(--primary-orange);
-            color: #000;
-        }
+.hero-section {
+    position: relative;
+    flex: 1;
+    min-height: 70vh;
+    padding-bottom: 60px;
+    width: 100%;
+}
+
+.subtitle {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--orange); 
+    letter-spacing: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.giant-text {
+    position: absolute;
+    top: 15%; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(40px, 9vw, 180px); 
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap; 
+    z-index: 1; 
+    color: #ffffff; 
+}
+
+.hero-left-content {
+    position: absolute;
+    left: 5%;
+    top: 65%; 
+    transform: translateY(-50%);
+    max-width: 400px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+.small-desc {
+    color: #ccc;
+    margin-bottom: 12px;
+    font-size: 14px; 
+}
+
+.main-desc {
+    font-size: 26px; 
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.btn-contact {
+    border: 1px solid var(--orange);
+    background: transparent;
+    cursor: pointer;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    color: rgba(209, 222, 229, 1);
+}
+
+.btn-contact:hover { 
+    background: var(--orange); 
+}
+
+.btn-contact-hero { 
+    padding: 10px 25px; 
+    font-size: 0.8rem; 
+    align-self: center; 
+    margin-top: 10px;
+}
+
+.car-wrapper {
+    position: absolute;
+    right: 2%; 
+    top: 60%; 
+    transform: translateY(-50%); 
+    width: 57%; 
+    max-width: 750px;
+    z-index: 5; 
+}
+
+.car-image {
+    position: relative;
+    width: 100%; 
+    display: block;
+    z-index: 2; 
+}
+
+.car-Shadow {
+    position: absolute;
+    bottom: -10%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110%; 
+    z-index: 1; 
+}
+
+.review-badge {
+    position: absolute;
+    bottom: 30px;
+    right: 5%; 
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 10px;
+    z-index: 5;
+}
 
 
+/* RESPONSIVE (HERO ONLY) */
 
-.hero {
-            position: relative;
-            height: 60vh;
-            width: 100%;
-            background-image: url('https://www.folien-werft.de/wp-content/uploads/2023/11/Scheibentoenung-85-oder-95.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
+@media (max-width: 992px) {
+    .mobile-wrapper {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        background-image: url("../image/image.png"); 
+        background-position: center top; 
+        background-size: 250% 130vw; 
+        background-repeat: no-repeat;
+        overflow: hidden; 
+        background-color: var(--bg-dark); 
+    }
 
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.75);
-            z-index: 1;
-        }
+    .side-shape {
+        display: none !important; 
+    }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
+    .main-frame {
+        width: 100%; 
+        height: auto !important;
+        min-height: auto !important;
+        padding-bottom: 60px !important; 
+        border: none; 
+        border-bottom: 1.5px solid var(--border-color) !important;
+        margin: 20px auto !important; 
+        position: relative;
+        padding-top: 10px !important; 
+        background-image: none !important; 
+        background-color: transparent !important;
+    }
 
-        .subtitle {
-            color: var(--primary-orange);
-            font-size: 0.85rem;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-        }
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-height: auto !important;
+        padding-bottom: 20px !important;
+    }
 
-        .hero-content h1 {
-            color: #ffffff;
-            font-size: 5vw;
-            font-weight: 900;
-            letter-spacing: -2px;
-            margin-bottom: 38px;
-        }
+    .subtitle {
+        order: 1;
+        position: relative; top: auto; left: auto; transform: none;
+        margin-bottom: 5px;
+        text-align: center;
+        font-size: 11px;
+        letter-spacing: 2px;
+        color: var(--orange, #ff6b00); 
+    }
 
+    .giant-text {
+        order: 2;
+        position: relative; top: auto; left: auto; transform: none;
+        font-size: clamp(35px, 11vw, 55px); 
+        margin-bottom: 5px;
+        white-space: nowrap; 
+        width: 100%;
+        text-align: center;
+        line-height: 1;
+    }
+
+    .car-wrapper {
+        order: 3;
+        position: relative; top: auto; left: auto; transform: none;
+        right: -8%; 
+        width: 115%; 
+        max-width: 550px; 
+        margin: 10px 0 20px auto; 
+    }
+    
+    .car-Shadow { 
+        bottom: -5%; 
+        left: 45%; 
+    }
+
+    .hero-left-content {
+        display: contents; 
+    }
+
+    .small-desc { 
+        order: 4; 
+        font-size: 13px; 
+        margin-bottom: 8px; 
+        text-align: center; 
+        width: 100%;
+    }
+    
+    .main-desc { 
+        order: 5; 
+        font-size: 24px; 
+        margin-bottom: 20px; 
+        line-height: 1.2; 
+        text-align: center; 
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .review-badge {
+        order: 6; 
+        position: relative; bottom: auto; right: auto;
+        margin: 0 auto 20px auto;
+        width: fit-content;
+    }
+
+    .btn-contact-hero {
+        order: 7; 
+        margin-top: 10px;
+    }
+
+     /* .explore-shape {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        margin: 20px auto -2px auto !important; 
+        display: flex;
+        justify-content: center;
+        background-color: var(--bg-dark) !important; 
+        z-index: 10 !important;
+    } */
+
+ .explore-shape {
+    position: absolute !important;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+    .explore-flex {
+        margin-top: 30px !important; 
+    }
+}

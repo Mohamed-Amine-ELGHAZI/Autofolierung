@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hessen Folierung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .hero {
+            background-image: url('porsche-bg.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            align-items: center;
+            padding: 50px 20px 0; 
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,1) 100%);
+            z-index: 1;
+        }
+
+        .hero > * { z-index: 2; }
+
+        .logo { text-align: center; width: 100%; max-width: 400px; margin-top: 10px; }
+        .logo img { width: 100%; height: auto; }
+
+        .main-title {
+            color: #ffffff;
+            font-size: 1.4rem; font-weight: 700; letter-spacing: 12px;
+            text-transform: uppercase; margin-top: 40px; margin-right: -12px;
+            margin-bottom: auto; text-align: center;
+        }
+
+        .subtitle {
+            color: #ffffff;
+            font-size: 1.8rem; font-weight: 900; text-align: center;
+            text-transform: uppercase; line-height: 1.4; max-width: 1000px; padding-bottom: 40px;
+        }
+
+        .highlight { color: #e37400; }
+
+        .features-section { background-color: #000; padding: 0 20px 80px; display: flex; justify-content: center; }
+        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-width: 1000px; width: 100%; }
+        
+        .feature-card { padding: 50px 40px; display: flex; flex-direction: column; justify-content: center; }
+        .card-orange { background-color: #e37400; color: #ffffff; }
+        .card-light { background-color: #e9eef2; color: #000000; }
+        
+        .feature-card h3 { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 25px; line-height: 1.3; }
+        .feature-card p { font-size: 1.05rem; font-weight: 400; line-height: 1.5; }
+        
+        .card-orange.warranty-card h3 { font-size: 2rem; margin-bottom: 30px; }
+        .card-orange.warranty-card p { font-size: 1.2rem; font-weight: 700; }
+
+        .showcase-section {
+            background: linear-gradient(to bottom, #eaf0f4 0%, #eaf0f4 45%, #151618 45%, #151618 100%);
+            padding: 60px 20px 0;
+            text-align: center;
+        }
+
+        .protection-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; max-width: 1000px; margin: 0 auto 50px; }
+        .icon-box { display: flex; flex-direction: column; align-items: center; max-width: 150px; }
+        .icon-circle { background-color: #000; color: #fff; width: 80px; height: 80px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem; margin-bottom: 15px; }
+        .icon-box p { color: #000; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
+
+        .car-image-wrapper { max-width: 900px; margin: 0 auto; position: relative; min-height: 300px; display: flex; justify-content: center; align-items: center; }
+        .car-image-wrapper img { width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0px 30px 20px rgba(0,0,0,0.8)); }
+
+        .vehicle-details { margin-top: 30px; padding-bottom: 40px; }
+        .vehicle-details h4 { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; }
+        .vehicle-name { color: #e37400; font-size: 4.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 40px; line-height: 1; }
+
+        .package-title { font-size: 1.4rem; font-weight: 900; text-transform: uppercase; margin-bottom: 15px; }
+        .package-list { list-style: none; font-size: 1.1rem; line-height: 1.8; font-weight: 400; }
+
+        .pricing-section {
+            background-color: #151618;
+            padding: 60px 20px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            width: 100%;
+            margin-top: 60px;
+        }
+
+        .pricing-card { position: relative; padding: 80px 30px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .pricing-card.white { background-color: #ffffff; color: #000; }
+        .pricing-card.grey { background-color: #d1d9e0; color: #000; }
+        .pricing-card.orange { background-color: #e37400; color: #fff; }
+
+        .pricing-car-img { position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 85%; max-width: 250px; filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.3)); }
+
+        .pkg-name { font-size: 1.8rem; font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 15px; }
+        .pkg-price { font-size: 3rem; font-weight: 900; margin-bottom: 5px; }
+        .pkg-brutto { font-size: 0.9rem; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; color: #555; }
+        .pricing-card.orange .pkg-brutto { color: #fff; }
+
+        .triangle-down { width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; margin: 20px auto 30px; }
+        .pricing-card.white .triangle-down { border-top: 15px solid #e0e6eb; }
+        .pricing-card.grey .triangle-down { border-top: 15px solid #bdc6ce; }
+        .pricing-card.orange .triangle-down { border-top: 15px solid #c56500; }
+
+        .pkg-features { font-size: 1rem; font-weight: 400; line-height: 1.6; text-transform: uppercase; }
+
+        .rental-section {
+            background-color: #151618;
+            padding: 0 20px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-note {
+            max-width: 800px;
+            margin: 20px auto 60px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .rental-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .rental-text { flex: 1; text-align: left; }
+        .rental-text h2 { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 15px; }
+        .rental-text h2 span.orange { color: #e37400; display: block; }
+        .rental-text h2 span.grey { color: #d1d9e0; display: block; }
+        .rental-text p { font-size: 1.1rem; font-weight: 400; margin-top: 15px; }
+
+        .rental-image { flex: 1; display: flex; justify-content: flex-end; }
+        .rental-image img { max-width: 100%; height: auto; object-fit: contain; }
+
+        .disclaimer-section {
+            background-color: #ffffff;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .disclaimer-container {
+            color: #000000;
+            max-width: 1000px;
+            width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .disclaimer-container p { margin-bottom: 25px; }
+        .disclaimer-container p:last-child { margin-bottom: 0; }
+
+        .main-footer {
+            background-color: #151618;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            width: 100%;
+            max-width: 280px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-block p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.8;
+            color: #ffffff;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-grid { grid-template-columns: 1fr; gap: 80px; margin-top: 80px; }
+            .pricing-car-img { top: -70px; width: 60%; }
+            .rental-container { flex-direction: column; text-align: center; gap: 30px; }
+            .rental-text { text-align: center; }
+            .rental-image { justify-content: center; }
+            .rental-text h2 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 30px 15px 0; }
+            .main-title { font-size: 1rem; letter-spacing: 6px; margin-right: -6px; margin-top: 30px; }
+            .subtitle { font-size: 1.2rem; padding-bottom: 30px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .showcase-section { background: linear-gradient(to bottom, #eaf0f4 0%, #eaf0f4 30%, #151618 30%, #151618 100%); }
+            .vehicle-name { font-size: 2.5rem; }
+            .pricing-car-img { width: 70%; max-width: 220px; }
+            .disclaimer-section { padding: 40px 20px; }
+            .disclaimer-container { font-size: 0.95rem; }
+            .main-footer { padding: 40px 20px; }
+            .footer-logo { max-width: 220px; }
+            .footer-block p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="logo"><img src="image/pattern-11.png" alt="Hessen Folierung Logo"></div>
+        <h1 class="main-title">SCHÜTZEN SIE IHR AUTO</h1>
+        <div class="subtitle">UNSERE <span class="highlight">NEUE PREMIUM-LACKSCHUTZFOLIE</span> SETZT<br>NEUE MASSSTÄBE IN QUALITÄT UND FUNKTION:</div>
+    </section>
+
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-card card-orange">
+                <h3>SOFORTIGER<br>SELBSTHEILUNGSEFFEKT</h3>
+                <p>Als einzige Folie am Markt regeneriert sie sich vollkommen selbstständig – ganz ohne externe Wärmezufuhr. Kleine Kratzer verschwinden innerhalb kürzester Zeit von selbst.</p>
+            </div>
+            <div class="feature-card card-light">
+                <h3>HOCHWERTIGES<br>TPU-MATERIAL</h3>
+                <p>Hochwertiges TPU-Material: Gefertigt aus thermoplastischem Polyurethan überzeugt die Folie durch außergewöhnliche Flexibilität, Langlebigkeit und Widerstandskraft gegenüber Steinschlag, Umwelteinflüssen und Waschanlagen.</p>
+            </div>
+            <div class="feature-card card-light">
+                <h3>KRISTALLKLARE<br>HOCHGLANZ-OBERFLÄCHE</h3>
+                <p>Sie ist die derzeit einzige Lackschutzfolie, die einen so intensiven Glanz bietet – nahezu unsichtbar auf dem Lack. Man erkennt nicht, dass eine Folie angebracht ist.</p>
+            </div>
+            <div class="feature-card card-orange warranty-card">
+                <h3>10 JAHRE GARANTI</h3>
+                <p>vergilbungsfrei und pflegeleicht</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="showcase-section">
+        <div class="protection-icons">
+            <div class="icon-box"><div class="icon-circle"><i class="fa-solid fa-droplet"></i></div><p>WASSERFLECKEN</p></div>
+            <div class="icon-box"><div class="icon-circle"><i class="fa-solid fa-sun"></i></div><p>UV-<br>STRAHLENSCHÄDEN</p></div>
+            <div class="icon-box"><div class="icon-circle"><i class="fa-solid fa-poop"></i></div><p>VOGELKOT</p></div>
+            <div class="icon-box"><div class="icon-circle"><i class="fa-solid fa-spray-can-sparkles"></i></div><p>STRASENSCHMUTZ</p></div>
+            <div class="icon-box"><div class="icon-circle"><i class="fa-solid fa-car-burst"></i></div><p>KRATZER<br>UND ROST</p></div>
+        </div>
+        <div class="car-image-wrapper"><img src="orange-car.png" alt="Porsche 911 Cabrio"></div>
+        <div class="vehicle-details">
+            <h4 class="package-title">VORBEREITUNGSPAKET UMFASST:</h4>
+            <ul class="package-list">
+                <li>Handwäsche</li>
+                <li>Umfassende Fahrzeugbegutachtung inklusive Schadensanalyse</li>
+                <li>Lackaufbereitung (1-Sicht Polietur)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="pricing-grid">
+            <div class="pricing-card white">
+                <img src="car-basic.png" alt="Basic Car Coverage" class="pricing-car-img">
+                <div class="pkg-name">BASIC<br>PAKET</div>
+                <div class="pkg-price">€2.500</div>
+                <div class="pkg-brutto">BRUTTO</div>
+                <div class="triangle-down"></div>
+                <div class="pkg-features">FRONTSTOSSSTANGE,<br>MOTORHAUBE<br>SPIEGEL<br>KOTFLÜGEL</div>
+            </div>
+            <div class="pricing-card grey">
+                <img src="car-pro.png" alt="Pro Car Coverage" class="pricing-car-img">
+                <div class="pkg-name">PRO<br>PAKET</div>
+                <div class="pkg-price">€3.500</div>
+                <div class="pkg-brutto">BRUTTO</div>
+                <div class="triangle-down"></div>
+                <div class="pkg-features">FRONTSTOSSSTANGE<br>MOTORHAUBE<br>SPIEGEL<br>KOTFLÜGEL SEITENSCHWELLER<br>A-SÄULE + DACHSTÜCK</div>
+            </div>
+            <div class="pricing-card orange">
+                <img src="car-premium.png" alt="Premium Car Coverage" class="pricing-car-img">
+                <div class="pkg-name">PREMIUM<br>PAKET</div>
+                <div class="pkg-price">€6.000</div>
+                <div class="pkg-brutto">BRUTTO</div>
+                <div class="triangle-down"></div>
+                <div class="pkg-features">GESAMTES FAHRZEUG<br>VON AUSSEN</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rental-section">
+        <p class="footer-note">
+            Die Folie (Schablone) wird individuell vergrößert, sodass es uns möglich ist, die Folie so gut wie es geht um die Kante zu verarbeiten. Montagezeit beträgt je nach Paket 3-5 Werktage.
+        </p>
+
+        <div class="rental-container">
+            <div class="rental-text">
+                <h2>
+                    <span class="orange">LEIHWAGEN</span>
+                    <span class="grey">CUPRA</span>
+                    <span class="grey">FORMENTOR</span>
+                </h2>
+                <p>Einen Leihwagen gibt es – nach Verfügbarkeit – ab 25 € pro Tag.</p>
+            </div>
+            <div class="rental-image">
+                <img src="cupra-car.png" alt="Cupra Formentor Leihwagen">
+            </div>
+        </div>
+    </section>
+
+    <section class="disclaimer-section">
+        <div class="disclaimer-container">
+            <p>Bitte beachten Sie, dass im Falle der Wiederanbringung von Schriftzügen auf der Folie diese separat von Ihnen neu bestellt werden müssen.</p>
+            <p>Wir möchten Sie darauf hinweisen, dass wir Steinschläge oder Kratzer nicht ausbessern oder nachlackieren können. Sollte Ihr Fahrzeug Steinschläge aufweisen, werden diese unter der Folie sichtbar sein. Besonders bei schwarzem Lack werden diese als weiße Punkte erkennbar sein. Wenn Sie die Steinschläge ausbessern lassen möchten, wenden Sie sich bitte an eine Fachfirma (Smart Repair). Verwenden Sie keinen Lackstift selbst, da dies das Problem verschlimmern kann. Sollte Ihnen unser Angebot zusagen, freuen wir uns auf Ihren Besuch.</p>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="image/pattern-11.png" alt="Hessen Folierung Logo">
+            </div>
+            <div class="footer-info">
+                <div class="footer-block">
+                    <p>Tel.: 069 348795475</p>
+                    <p>info@hessen-folierung.de</p>
+                </div>
+                <div class="footer-block">
+                    <p>Hanauer Landstraße 505A</p>
+                    <p>60386 Frankfurt am Main</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
